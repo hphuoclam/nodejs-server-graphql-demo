@@ -1,1 +1,4 @@
-# nodejs-server-graphql-demo
+# nodejs server graphql demo
+
+npm install
+npm start
