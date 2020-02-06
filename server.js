@@ -3,7 +3,8 @@ var graphqlHTTP = require('express-graphql');
 var { buildSchema } = require('graphql');
 const {
     getUser,
-    retrieveUsers
+    retrieveUsers,
+    updateUser
 } = require("./user");
 
 
@@ -19,6 +20,9 @@ var schema = buildSchema(`
     name: String
     age: Int
     gender: String  
+  },
+  type Mutation {
+    updateUser(id: Int!, name: String!, age: String): Person
   }
 `);
 
@@ -26,7 +30,8 @@ var schema = buildSchema(`
 var root = {
     hello: () => 'Hello world!',
     user: getUser,   // Resolver function to return user with specific id
-    users: retrieveUsers
+    users: retrieveUsers,
+    updateUser
 };
 
 // Create an express server and a GraphQL endpoint

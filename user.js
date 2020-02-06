@@ -47,7 +47,19 @@ const retrieveUsers = function (args) { // Return a list of users. Takes an opti
     }
 }
 
+const updateUser = function({id, name, age}) {  // Update a user and return new user details
+    users.map(user => {
+      if(user.id === id) {
+        user.name = name;
+        user.age = age;
+        return user;
+      }
+    });
+    return users.filter(user=> user.id === id) [0];
+  }
+
 module.exports = {
     getUser,
-    retrieveUsers
+    retrieveUsers,
+    updateUser
 }
