@@ -1,6 +1,5 @@
 # Nodejs server graphql demo
 
 ###### Install and Start
-> npm install
-
+> npm install  
 > npm start
